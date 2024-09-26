@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<main>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a routerLink="/" class="header"><span>Unlimited</span>-Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>  
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLink="about" >About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contact" >Contact Us</a>
+                </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div>
+                        <button class="btn btn-outline-warning border-0 mx-5"><img src="assets/cart.png" alt="Cart" /><span>Cart</span></button>            
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-outline-primary mx-3" routerLink="/sign-up">Sign Up</a>
+                        <a class="btn btn-outline-secondary" routerLink="/sign-in">Sign In</a>
+                    </div>
+                    
+                </div>    
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div>
+            <h2>Enjoy Your Shopping With Unlimited-Store</h2>
+            <button>Start Shopping!</button>
+        </div>
+    </section>
+    <app-categories></app-categories>
+    <app-allproducts></app-allproducts>
+</main>

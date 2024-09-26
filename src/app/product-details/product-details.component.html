@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<main>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a routerLink="/" class="header"><span>Unlimited</span>-Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="bg-light vh-100 d-flex align-items-center">
+    <div class="container bg-light py-3">
+        <div class="row my-5" *ngIf="product">
+            <!-- Product Image Column -->
+            <div class="col-12 col-lg-6 col-md-6 d-flex align-items-center">
+                <img [src]="product.image" alt="{{ product.title }}" class="product-img rounded shadow">
+            </div>
+            <!-- Product Details Column -->
+            <div class="col-12 col-lg-6 col-md-6 d-flex align-items-center">
+                <div>
+                    <h2 class=" title">{{ product.title }}</h2>
+                    <p class="lead description">{{ product.description }}</p>
+                    <p><strong>Price: ${{ product.price }}</strong></p>
+                    <p>Category: <span class="badge badge-secondary">{{ product.category }}</span></p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="gap-4">Color:</div>
+                        <div class="form-check mx-3">
+                          <input type="checkbox" id="whiteColor" class="form-check-input" aria-label="white">
+                          <label for="whiteColor" class="form-check-label">White</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" id="darkColor" class="form-check-input" aria-label="Dark">
+                          <label for="darkColor" class="form-check-label">Dark</label>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center justify-content-end">
+                        <button class="btn btn-outline-secondary" (click)="decrement()">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="mx-3">{{ quantity }}</span>
+                        <button class="btn btn-outline-secondary" (click)="increment()">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <button class="mybtn mt-5">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="loading" class="text-center">Loading product details...</div>
+        <div *ngIf="error" class="text-center">{{ error }}</div>
+    </div>
+  </div>
+</main>

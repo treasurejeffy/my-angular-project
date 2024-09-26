@@ -1,0 +1,57 @@
+nav{
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+nav .header{
+    font-size: 20px;
+    font-weight: 500;
+    span{
+        color: orangered;
+    }
+}
+
+ul{
+    display: flex;
+    gap: 20px;            
+    li{            
+        list-style: none;
+        a{
+            text-decoration: none;
+            color: #000000;
+            cursor: pointer;
+        }
+    }
+}
+
+nav button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+        height: 25px;
+        margin-right: 10px;
+    }
+    span{
+        font-size: medium;
+        font-weight: 500;
+    }
+}
+
+section{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    div{
+        text-align: center;
+        h2{
+            font-size: 40px;
+            font-weight: 700;
+        }
+        span{
+            color: orangered;
+        }
+    }
+}

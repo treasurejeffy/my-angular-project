@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<section class="container">
+    <h2>Our Products</h2>
+    <div *ngIf="isLoading" class="loader">Loading...</div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="!isLoading && !errorMessage" class="product-grid">
+        <div *ngFor="let product of allproducts" class="card" (click)="showAddToCart(product)">
+            <div class="eye-icon d-flex justify-content-end p-2 text-end"  (click)="viewProductDetails(product.id); $event.stopPropagation()">
+                <i class="fas fa-eye"></i>
+            </div>
+            <img [src]="product.image" alt="{{ product.title }}" class="card-img">
+            <div class="card-body">
+                <h3>{{ product.title }}</h3>
+                <p>{{ product.description.substring(0, 50) }}...</p>
+                <p><strong>${{ product.price }}</strong></p>
+                <p>Category: {{ product.category }}</p>
+            </div>
+            <div class="add-to-cart-btn">
+                <button class="mybtn" (click)="addToCart(product); $event.stopPropagation()">Add to Cart</button>
+            </div>
+        </div>        
+    </div>    
+</section>

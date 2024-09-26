@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<section class="container">
+    <h3 class="mb-4 mt-5">Our Catergories</h3>
+    <div *ngIf="isLoading" class="loader-container">
+        <!-- Add your loader spinner here -->
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+      <div *ngIf="!isLoading && !errorMessage" class="row">
+        <div *ngFor="let category of categoriesWithImages" class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="category-item mb-2">
+            <img [src]="category.imageUrl" alt="{{ category.name }}" class="category-image">
+            <p class="category-name">{{ category.name }}</p>
+          </div>
+        </div>
+    </div>               
+</section>
