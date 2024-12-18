@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Import FormsModule for two-way binding
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [CommonModule, FormsModule],  // Add FormsModule to the imports array
+  imports: [CommonModule, FormsModule, RouterModule],  // Add FormsModule to the imports array
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })

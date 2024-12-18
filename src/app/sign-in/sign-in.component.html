@@ -1,13 +1,21 @@
-<section>
-    <form (ngSubmit)="onSubmit()">
-      <h2>Sign In</h2>
-      <label for="username">Username</label>
-      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<section class="mybg">
+  <div class="container signinbox">
+    <form (ngSubmit)="onSubmit()" class="shadow rounded p-5">
+      <h2 class="mb-2">Sign In</h2>
+      <p class="fw-semibold mb-4">Welcome back to Unlimited-Shop.</p>
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
   
-      <label for="password">Password</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
-  
-      <button type="submit">Sign In</button>
+      <label for="password" class="form-label mt-3">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+      <div class="d-flex w-100 justify-content-end my-3">
+        <a routerLink="/sign-up"  class="text-dark ">Don't have account?</a>
+      </div>        
+      <div class="mt-4">
+        <button type="submit" class="btn w-100 btn-lg btn-dark fw-semibold">Sign In</button>
+      </div>
     </form>
-  </section>
+  </div>
+</section>
   
